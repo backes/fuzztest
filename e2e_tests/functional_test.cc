@@ -132,7 +132,7 @@ TEST_F(UnitTestModeTest, InvalidSeedsAreSkippedAndReported) {
           /*target_binary=*/"testdata/fuzz_tests_with_invalid_seeds");
   EXPECT_THAT(std_err, HasSubstr("[!] Skipping WithSeeds() value in"));
   EXPECT_THAT(std_err,
-              HasSubstr("Could not turn value into corpus type:\n{17}"));
+              HasSubstr("Could not turn value into corpus type:\n11, 17"));
   EXPECT_THAT(std_err, HasSubstr("The value 17 is not InRange(0, 10):\n{17}"));
   // Valid seeds are not reported.
   EXPECT_THAT(std_err, Not(HasSubstr("{6}")));

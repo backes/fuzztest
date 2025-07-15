@@ -25,7 +25,7 @@ FUZZ_TEST(MySuite, InvalidSeedDueToUserValueNotConvertibleToCorpusValue)
     // Map does not support seeds.
     .WithDomains(fuzztest::Map([](int) { return 0; },
                                fuzztest::Arbitrary<int>()))
-    .WithSeeds({{17}});
+    .WithSeeds({11, 17});
 
 void InvalidSeedDueToCorpusValueOutOfDomain(int) {}
 FUZZ_TEST(MySuite, InvalidSeedDueToCorpusValueOutOfDomain)
